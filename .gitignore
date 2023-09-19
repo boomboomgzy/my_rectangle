@@ -1,0 +1,11 @@
+*
+!src
+!libsrc_*
+!include
+!*.c
+!*.cpp
+!*.cxx
+!*.cc
+!*.h
+!.gitignore
+!CMakeLists.txt
