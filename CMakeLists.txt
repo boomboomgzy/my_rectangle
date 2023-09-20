@@ -1,6 +1,8 @@
 #在CMakeLists.txt所在目录执行   cmake . && make  
 cmake_minimum_required(VERSION 2.8)
 PROJECT(my_rectangles) 
+set(CMAKE_CXX_STANDARD 11)  # 将 C++ 标准设置为 C++ 11
+set(CMAKE_CXX_STANDARD_REQUIRED ON)  # C++ 11 是强制要求，不会衰退至低版本
 SET(CMAKE_BUILD_TYPE "Debug") #Debug模式
 #SET(CMAKE_BUILD_TYPE "Release") #Release模式
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")  #Debug模式下添加的编译选项
