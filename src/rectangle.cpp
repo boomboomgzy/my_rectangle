@@ -13,3 +13,24 @@ std::string& rectangle::to_string() const{
     return s;
 }
 
+const std::string& rectangle::get_id() const{
+    return _id;
+}
+
+
+place rectangle::get_x() const{
+    return _x;
+};
+place rectangle::get_y() const{
+    return _y;
+};
+distance rectangle::get_w() const{
+    return _w;
+};
+distance rectangle::get_h() const{
+    return _h;
+};
+
+
+
+
