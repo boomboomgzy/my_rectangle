@@ -6,7 +6,7 @@
 
 using namespace rapidjson;
 
-int main() {
+int rapidjson_test() {
     // 1. 把 JSON 解析至 DOM。
     const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
     Document d;
