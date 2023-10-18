@@ -1,4 +1,4 @@
-#在CMakeLists.txt所在目录执行   cmake . && make  
+#build 目录执行  cmake .. && make
 cmake_minimum_required(VERSION 2.8)
 PROJECT(my_rectangles) 
 set(CMAKE_CXX_STANDARD 11)  # 将 C++ 标准设置为 C++ 11
