@@ -3,11 +3,16 @@
 #include<iostream>
 #include<sstream>
 
-rectangle::rectangle(place& x,place& y,distance& w,distance& h,const std::string& id):_x(x),_y(y),_w(w),_h(h),_id(id){
+
+void rectangle::reset_rect_string_coords(){
     std::stringstream sstream;
     sstream<<"("<<_x<<","<<_y<<") , "<<"w="<<_w<<", h="<<_h<<" .";
     _rect_string_coords=sstream.str();
 }
+
+rectangle::rectangle()=default;
+
+
 
 
 const std::string& rectangle::get_id() const{
@@ -29,6 +34,22 @@ distance rectangle::get_w() const{
 distance rectangle::get_h() const{
     return _h;
 };
+
+void rectangle::set_x(const place x){
+    _x=x;
+}
+void rectangle::set_y(const place y){
+    _y=y;
+}
+void rectangle::set_w(const distance w){
+    _w=w;
+}
+void rectangle::set_h(const distance h){
+    _h=h;
+}
+
+
+
 
 
 
