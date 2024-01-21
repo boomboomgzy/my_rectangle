@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)  # 将 C++ 标准设置为 C++ 11
 set(CMAKE_CXX_STANDARD_REQUIRED ON)  # C++ 11 是强制要求，不会衰退至低版本
 SET(CMAKE_BUILD_TYPE "Debug") #Debug模式
 #SET(CMAKE_BUILD_TYPE "Release") #Release模式
-SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -gdwarf-2")  #Debug模式下添加的编译选项
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall  -fno-inline -g")  #Debug模式下添加的编译选项
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")  #Release模式下添加的编译选项
 FILE(GLOB SOURCE_SRC "${CMAKE_SOURCE_DIR}/src/*.cpp")  #普通源文件
 FILE(GLOB SOURCE_MAIN "${CMAKE_SOURCE_DIR}/main.cpp") #主程序文件

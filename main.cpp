@@ -4,6 +4,7 @@
 #include<set>
 #include "parser.h"
 #include <boost/json.hpp>
+#include<sstream>
 
 int main(int argc,const char* argv[]){
 
@@ -39,7 +40,11 @@ int main(int argc,const char* argv[]){
     }
 
     for(const rectangle& rect:overlaps_rect){
-        std::cout << "Between rectangle " << rect.get_id() << " at: " << rect.get_string_coords() << std::endl;
+        std::stringstream ss;
+        for(int rect_id:rect.get_id()){
+            ss<<rect_id<<" ";
+        }
+        std::cout << "Between rectangle " << ss.str() << " at: " << rect.get_string_coords() << std::endl;
     }
   
     

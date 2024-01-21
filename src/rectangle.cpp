@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<sstream>
-
+#include<set>
 
 void rectangle::reset_rect_string_coords(){
     std::stringstream sstream;
@@ -15,7 +15,7 @@ rectangle::rectangle()=default;
 
 
 
-const std::string& rectangle::get_id() const{
+const std::set<int>& rectangle::get_id() const{
     return _id;
 }
 

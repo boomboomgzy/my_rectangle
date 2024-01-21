@@ -1,7 +1,7 @@
 #pragma once
 
 #include<string>
-
+#include<set>
 //rectangle coordinates types
 using place=int;
 using distance=int;
@@ -12,10 +12,10 @@ class rectangle{
         rectangle();
 
         template <typename Arg>
-        rectangle(const place x,const place y,const distance w,const distance h,Arg&& id):_x(x),_y(y),_w(w),_h(h),_id(std::forward<Arg>(id)){
+        rectangle(const place x,const place y,const distance w,const distance h,Arg&& id):_x(x),_y(y),_w(w),_h(h),_id(id){
             this->reset_rect_string_coords();
         }
-        const std::string& get_id() const;
+        const std::set<int>& get_id() const;
 
         place get_x() const;
         place get_y() const;
@@ -29,7 +29,7 @@ class rectangle{
         template <typename Arg>
         void set_id (Arg&& id)   
         {
-            _id=std::forward<Arg>(id);
+            _id=id;
         }
         const std::string& get_string_coords() const;
 
@@ -41,9 +41,6 @@ class rectangle{
         }
         // 重载 < 运算符
         bool operator<(const rectangle& other_rect) const{
-            //if(_x==other_rect.get_x() && _y == other_rect.get_y() && _w==other_rect.get_w() && _h==other_rect.get_h()){
-            //    return false;
-            //}
             if(*this==other_rect){
                 return false;
             }
@@ -63,7 +60,7 @@ class rectangle{
     private:
         place _x,_y;
         distance _w,_h;
-        std::string _id;
+        std::set<int> _id;
         std::string _rect_string_coords;  //矩阵信息字符串
 
 };

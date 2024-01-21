@@ -79,7 +79,7 @@ namespace gzy_json
             }
 
             count+=1;
-            new_rectangle->set_id(std::to_string(count));
+            new_rectangle->set_id(*(new std::set<int>{count}));
             new_rectangle->reset_rect_string_coords();
             vec_rec.insert(*new_rectangle);
            
@@ -110,14 +110,15 @@ namespace gzy_json
         place overlap_rd_x=std::min(rect_a_rd_x,rect_b_rd_x);
         place overlap_rd_y=std::min(rect_a_rd_y,rect_b_rd_y);
 
+        std::set<int>* temp_id=new std::set<int>(rect_a.get_id());
+        temp_id->insert(rect_b.get_id().begin(),rect_b.get_id().end());
         if(overlap_lu_x<overlap_rd_x && overlap_lu_y<overlap_rd_y){
-            return new rectangle(overlap_lu_x,overlap_lu_y,overlap_rd_x-overlap_lu_x,overlap_rd_y-overlap_lu_y,rect_a.get_id()+" and "+rect_b.get_id());
+            return new rectangle(overlap_lu_x,overlap_lu_y,overlap_rd_x-overlap_lu_x,overlap_rd_y-overlap_lu_y,*temp_id);
         }
         else{
             return nullptr;
         }
     }
-//输出结果不好看
     void findoverlaps(const std::set<rectangle>& input_rect, std::set<rectangle>& overlaps_rect){
         if(input_rect.size()<=1){
             return;    
